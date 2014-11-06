@@ -27,7 +27,7 @@ public class BTreeMain {
         int d=sc.nextInt();
         BTree btree=new BTree(d);
         while(true){
-            System.out.println("\n1.Create.\n2.Insert\n3.Display\n4.Search\n5.Exit");
+            System.out.println("\n1.Create.\n2.Insert key\n3.Display\n4.Search key\n5.Delete key\n6.Exit");
             System.out.println("Enter your choice");
             int c=sc.nextInt();
             switch(c){
@@ -46,13 +46,14 @@ public class BTreeMain {
                     break;
                 case 4:System.out.println("\nEnter the element to Search");
                     int ser=sc.nextInt();
-                    btree.insert(ser);
+                    btree.search(ser);
                     break;
-                case 5:System.exit(0);break;
-                    
-                case 6:System.out.println("\nEnter the element to delete");
+                case 5:System.out.println("\nEnter the element to delete");
                     int del=sc.nextInt();
                     btree.bTreeDeleteNode(del);
+                    break;
+                case 6:System.exit(0);break;
+                    
                 
                     
             }

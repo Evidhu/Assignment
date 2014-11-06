@@ -21,7 +21,7 @@ class Node{
     }
 }
 public class BTree {
-    boolean cre=false;
+//    boolean cre=false;
     Node node=null;
     Node node1=null;
     int t;
@@ -106,7 +106,7 @@ public class BTree {
             
         }
         else
-            System.out.println("Element presents "+str+" in an node");
+            System.out.println("Element presents "+str+" in a node");
         
     }
 
@@ -114,10 +114,12 @@ public class BTree {
         boolean flag=false;
         String pos=" ";
         int i=1;
-        
-        while(i<=q.n&&ele>q.key[i])
+      //  System.out.println("1234");
+        while(i<=q.n&&ele>q.key[i]){
             i++;
-        if(i<q.n&&ele==q.key[i]){
+            // System.out.println("key"+q.key[i]);
+        }
+        if(i<=q.n&&ele==q.key[i]){
             pos+=i+" -th position";
             flag=true;
         }
@@ -132,7 +134,7 @@ public class BTree {
         Node nod=node;
         printNode(nod);
         System.out.println("");
-        printCild(nod);
+        printChild(nod);
     }
 
     private void printNode(Node nod) {
@@ -140,7 +142,7 @@ public class BTree {
             System.out.print(nod.key[i]+" * ");
     }
 
-    private void printCild(Node nod) {
+    private void printChild(Node nod) {
         for(int i=1;i<=nod.n+1;i++){
             if(nod.c[i]!=null)
                 printNode(nod.c[i]);
@@ -149,14 +151,14 @@ public class BTree {
         
         for(int i=1;i<=nod.n+1;i++){
             if(nod.c[i]!=null)
-                printCild(nod.c[i]);
+                printChild(nod.c[i]);
         }
             
     }
     
     private void deleteNode(Node q,int ele){
      //   boolean flag=false;
-        String pos=" ";
+        //String pos=" ";
         int i=1;
         
         while(i<=q.n){
@@ -201,6 +203,7 @@ public class BTree {
         //node=node1;
         
     }
+    
     
     
 }
